@@ -1,0 +1,29 @@
+<form name="loginForm" class="form-horizontal" role="form">
+<ul class="nav navbar-right" style="margin-left:10px;">
+    <li>
+        <div class="form-group">
+            <button type="submit" class=" btn btn-sm-header btn-primary" ng-click="doLogin(login)" name="submit" data-ng-disabled="loginForm.$invalid">Login</button>
+        </div>
+    </li>
+</ul>
+
+<ul class="nav navbar-right">
+    <li>
+
+        <div class="form-group">
+            <input type="password" class="form-control-header" placeholder="password" name="password" ng-model="login.password" required/>
+        </div>
+
+    </li>
+</ul>
+<ul class="nav navbar-right">
+    <li>
+            <div class="form-group">
+                <input type="text" class="form-control-header" placeholder="Username/Email" name="email" ng-model="login.email" required/>
+            </div>       </form>
+    </li>
+        <a href="">
+            don't have an account yet?
+            <a href="" style="color: red">register</a>
+        </a>
+</ul>

@@ -1,0 +1,161 @@
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header" >
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <strong><a class="navbar-brand" href="/">As_sistant</a></strong>
+        </div>
+        <ul class="nav navbar-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="">
+                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="#/user/setting"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="nav navbar-right">
+            <li>
+                <a href="#/user/dashboard"><i class="fa fa-home fa-fw"></i> Home</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header blue lighter bigger">User Settings</h1>
+<div class="col-lg-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            User Profile Customization
+        </div>
+        <div class="panel-body">
+            <ul class="nav nav-pills">
+                <li class="active"><a href="#/user/setting/" data-toggle="tab">Edit Profil</a>
+                </li>
+                <li><a href="#profile-pills" data-toggle="tab">Change Password</a>
+                </li>
+                <li><a href="#messages-pills" data-toggle="tab">Messages</a>
+                </li>
+                <li><a href="#settings-pills" data-toggle="tab">Settings</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane fade in active" id="home-pills">
+                    <div class="page-content">
+                        <div class="row">
+                            <div class="space-6"></div>
+                            <div class="col-sm-6 col-sm-offset-1">
+                                <div id="login-box" class="login-box visible widget-box no-border">
+                                    <div class="widget-body">
+                                        <div class="widget-main">
+                                            <br/>
+                                            <form name="signupForm" class="form-horizontal" role="form">
+                                                <div class="form-group">
+                                                    <label class="col-sm-5 control-label no-padding-right" for="username">Username</label>
+                                                    <div class="col-sm-7">
+                                                <span class="block input-icon input-icon-right">
+                                                    <input type="text" class="form-control" placeholder="Username" name="username" ng-model="user.username" focus/>
+                                                    <span ng-show="signupForm.username.$error.username" class="help-inline">Username is not Valid</span>
+                                                </span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-5 control-label no-padding-right" for="email">Email</label>
+                                                    <div class="col-sm-7">
+                                             <span class="block input-icon input-icon-right">
+                                        <input type="email" class="form-control" placeholder="Email" name="email" ng-model="user.email" focus/>
+                                        <span ng-show="signupForm.email.$error.email" class="help-inline">Email is not valid</span>
+                                    </span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-5 control-label no-padding-right" for="name">Name</label>
+                                                    <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" placeholder="Name" name='name' ng-model="user.name" />
+                            </span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-5 control-label no-padding-right" for="nik">NIK</label>
+                                                    <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" placeholder="Nik" name='nik' ng-model="user.nik" />
+                            </span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-5 control-label no-padding-right" for="phone">Phone</label>
+                                                    <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" placeholder="Nomor Telepon" name="phone" ng-model="user.phone"/>
+                            </span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-5 control-label no-padding-right" for="address">Alamat</label>
+                                                    <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" placeholder="alamat" name="address" ng-model="user.alamat" />
+                            </span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="col-sm-5 control-label no-padding-right" for="kota">Kota</label>
+                                                    <div class="col-sm-7">
+                                    <span class="block input-icon input-icon-right">
+                                <input type="text" class="form-control" placeholder="Kota" name="kota" ng-model="user.kota" />
+                            </span>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <span class="lbl col-sm-5"> </span>
+                                                    <div class="col-sm-7">
+                                                        <button ng-click="updateUser(user);"
+                                                                ng-disabled="isClean() || signupForm.$invalid"
+                                                                class="btn btn-primary">Update Data</button>
+                                                    </div>
+                                                </div>
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="profile-pills">
+                </div>
+                <div class="tab-pane fade" id="messages-pills">
+                    <h4>Messages Tab</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="tab-pane fade" id="settings-pills">
+                    <h4>Settings Tab</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
